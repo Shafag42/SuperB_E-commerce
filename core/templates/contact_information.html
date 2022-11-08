@@ -1,0 +1,199 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+<!-- Favicons Icon -->
+
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+
+{% block css %}
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+{% endblock %}
+
+{% block content %}
+<body class="customer-account-index customer-account inner-page">
+<div id="page"> 
+  <!-- Main Container -->
+  <section class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+        <div class="col-main col-sm-9 animated" style="visibility: visible;">
+          <div class="my-account">
+            <div class="page-title">
+              <h1>Add New Address</h1>
+            </div>
+            <form action="#" method="post" id="form-validate">
+              {% csrf_token %}
+              {% if form.errors %}
+              <div class="alert alert-danger alert-dismissible" role="alert">
+                  <div id="form_errors">
+                      {% for key, value in form.errors.items %}
+                      <strong>{{ key }} - {{ value }}</strong>
+                      {% endfor %}
+                  </div>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+            {% endif %}
+              <div class="fieldset group-select">
+                <input name="form_key" type="hidden" value="">
+                <input type="hidden" name="success_url" value="">
+                <input type="hidden" name="error_url" value="">
+                <h2 class="legend">Contact Information</h2>
+                <ul class="">
+                  <li class="">
+                    <div class="customer-name">
+                      <div class="input-box name-firstname">
+                        <label for="firstname">First Name<span class="required">*</span></label>
+                        <div class="input-box1">
+                          {{form.first_name}}
+                        </div>
+                      </div>
+                      <div class="input-box name-lastname">
+                        <label for="lastname">Last Name<span class="required">*</span></label>
+                        <div class="input-box1">
+                          {{form.last_name}}
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="">
+                    <div class="">
+                      <label for="company">Company</label>
+                      <br>
+                      {{form.company}}
+                    </div>
+                  </li>
+                  <li class="">
+                    <div class="input-box">
+                      <label for="telephone">Telephone<em class="required">*</em></label>
+                      <br>
+                      {{form.telephone}}
+                    </div>
+                    <div class="input-box">
+                      <label for="fax">Fax</label>
+                      <br>
+                      {{form.fax}}
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="fieldset group-select">
+                <h2 class="legend">Address</h2>
+                <ul class="">
+                  <li class="">
+                    <label for="street_1">Street Address<em class="required">*</em></label>
+                    <br>
+                    {{form.address_one}}
+                  </li>
+                  <li class="">
+                    {{form.address_two}}
+                  </li>
+                  <li class="">
+                    <div class="field">
+                      <div class="input-box">
+                        <label for="zip">Zip/Postal Code<em class="required">*</em></label>
+                        <br>
+                        {{form.zip}}
+                      </div>
+                    </div>
+                    <div class="field">
+                      <div class="input-box">
+                        <label for="country">Country<em class="required">*</em></label>
+                        <br>
+                        {{form.country}}
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="buttons-set">
+                <p class="required">* Required Fields</p>
+                <button type="submit" title="" class="button"><span>Save Address</span></button>
+                <a href="#"><small>« </small>Back</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        {% comment %} <aside class="col-right sidebar col-sm-3 animated" style="visibility: visible;">
+          <div class="block block-account">
+            <div class="block-title"> My Account </div>
+            <div class="block-content">
+              <ul>
+                <li><a href="#"><span>Edit Account</span></a></li>
+                <li class="current"><a>Contact Information</a></li>
+                <li><a href="#"><span> Products</span></a></li>
+                <li><a href="#"><span> My Wishlist</span></a></li>
+                <li class="last"><a href="#"><span>Checkout</span></a></li>
+              </ul>
+            </div>
+            <!--block-content-->
+          </div>
+          <!--block block-account-->
+
+        </aside>
+        <!--col-right sidebar col-sm-3--> {% endcomment %}
+      </div>
+    </div>
+  </section>
+  <!-- Main Container End -->
+
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+  
+  
+</div>
+
+{% endblock %}
+<!-- JavaScript --> 
+{% block js %} 
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+{% endblock %}
+</body>
+</html>

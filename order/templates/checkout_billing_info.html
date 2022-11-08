@@ -1,0 +1,248 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+<!-- Favicons Icon -->
+{% block title %}
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+{% endblock %}
+
+
+<!-- CSS Style -->
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+{% endblock %}
+
+{% block content %}
+<body class="onestepcheckout-index-index inner-page">
+<div id="page"> 
+  
+    <!-- Main Container -->
+  <section class="main-container col2-right-layout bounceInUp animated">
+    <div class="main container">
+      <div class="row">
+        <div class="col-main col-sm-9">
+          <div class="page-title">
+            <h1>Checkout</h1>
+          </div>
+          <ol class="one-page-checkout" id="checkoutSteps">
+            <li id="opc-login" class="section">
+              <div class="step-title"> <span class="number">1</span>
+                <h3 class="one_page_heading">Checkout Method</h3>
+                <!--<a href="#">Edit</a>--> 
+              </div>
+            </li>
+            <li id="opc-billing" class="section allow active">
+              <div class="step-title"> <span class="number">2</span>
+                <h3 class="one_page_heading">Billing Information</h3>
+                <!--<a href="#">Edit</a>--> 
+              </div>
+              <div id="checkout-step-billing" class="step a-item">
+                <form id="co-billing-form" action="">
+                  <fieldset class="group-select">
+                    <ul>
+                      <li id="billing-new-address-form">
+                        <fieldset>
+                          <legend>New Address</legend>
+                          <input type="hidden"  id="billing:address_id" />
+                          <ul>
+                            <li>
+                              <div class="customer-name">
+                                <div class="input-box name-firstname">
+                                  <label for="billing:firstname"> First Name<span class="required">*</span></label>
+                                  <br />
+                                  <input type="text" id="billing:firstname" name="" title="First Name" class="input-text" />
+                                </div>
+                                <div class="input-box name-lastname">
+                                  <label for="billing:lastname"> Last Name<span class="required">*</span> </label>
+                                  <br />
+                                  <input type="text" id="billing:lastname" name="" title="Last Name" class="input-text" />
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="billing:company">Company</label>
+                                <br />
+                                <input type="text" id="billing:company" name="" title="Company" class="input-text" />
+                              </div>
+                              <div class="input-box">
+                                <label for="billing:email">Email Address <span class="required">*</span></label>
+                                <br />
+                                <input type="text" name="billing[email]" id="billing:email" title="Email Address" class="input-text" />
+                              </div>
+                            </li>
+                            <li>
+                              <label for="billing:street1">Address <span class="required">*</span></label>
+                              <br />
+                              <input type="text" title="Street Address" name="" id="billing:street1  street1" class="input-text" />
+                            </li>
+                            <li>
+                              <input type="text" title="Street Address 2" name="" id="billing:street2 street2" class="input-text" />
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="billing:city">City <span class="required">*</span></label>
+                                <br />
+                                <input type="text" title="City" name="" class="input-text" id="billing:city" />
+                              </div>
+                              <div id="div" class="input-box">
+                                <label for="billing:region">State/Province <span class="required">*</span></label>
+                                <br />
+                                <select defaultvalue="" id="billing:region_id" name="" title="State/Province" class="validate-select">
+                                  <option>Please select region, state or province</option>
+                                  <option value="1">Alabama</option>
+                                  <option value="2">Alaska</option>
+                                  <option value="3">American Samoa</option>
+                                </select>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="billing:telephone">Telephone <span class="required">*</span></label>
+                                <br />
+                                <input type="text" name="" title="Telephone" class="input-text" id="billing:telephone" />
+                              </div>
+                              <div class="input-box">
+                                <label for="billing:fax">Fax</label>
+                                <br />
+                                <input type="text" name="" title="Fax" class="input-text" id="billing:fax" />
+                              </div>
+                            </li>
+                            <li id="register-customer-password">
+                              <div class="input-box">
+                                <label for="billing:customer_password">Password <span class="required">*</span></label>
+                                <br />
+                                <input type="password" name="" id="billing:customer_password" title="Password" class="input-text" />
+                              </div>
+                              <div class="input-box">
+                                <label for="billing:confirm_password">Confirm Password <span class="required">*</span></label>
+                                <br />
+                                <input type="password" name="" title="Confirm Password" id="billing:confirm_password" class="input-text" />
+                              </div>
+                            </li>
+                            <li>
+                              <input type="hidden" name="" value="1" />
+                            </li>
+                          </ul>
+                        </fieldset>
+                      </li>
+                      <li class="control">
+                        <input type="radio" class="radio" onClick="#" title="Ship to this address" checked="checked" value="1" id="billing:use_for_shipping_yes" name="">
+                        <label for="billing:use_for_shipping_yes">Ship to this address</label>
+                      </li>
+                      <li class="control">
+                        <input type="radio" class="radio" onClick="#" title="Ship to different address" value="0" id="billing:use_for_shipping_no" name="">
+                        <label for="billing:use_for_shipping_no">Ship to different address</label>
+                      </li>
+                    </ul>
+                    <p class="require"><em class="required">* </em>Required Fields</p>
+                    <button type="button" class="button continue" onClick="#"><span>Confirm order</span></button>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <aside class="col-right sidebar col-sm-3">
+          <div class="block block-progress">
+            <div class="block-title ">Your Checkout</div>
+            <div class="block-content">
+              <dl>
+                <dt class="complete"> Billing Address <span class="separator">|</span> <a href="#">Change</a> </dt>
+                <dd class="complete">
+                  <address>
+                  John Deo<br>
+                  Better Technology Labs.<br>
+                  23 North Main Stree<br>
+                  Windsor<br>
+                  Holtsville,  New York, 00501<br>
+                  United States<br>
+                  T: 5465465 <br>
+                  F: 466523
+                  </address>
+                </dd>
+                <dt class="complete"> Shipping Address <span class="separator">|</span> <a href="#">Change</a> </dt>
+                <dd class="complete">
+                  <address>
+                  John Deo<br>
+                  Better Technology Labs.<br>
+                  23 North Main Stree<br>
+                  Windsor<br>
+                  Holtsville,  New York, 00501<br>
+                  United States<br>
+                  T: 5465465 <br>
+                  F: 466523
+                  </address>
+                </dd>
+                <dt class="complete"> Shipping Method <span class="separator">|</span> <a href="#">Change</a> </dt>
+                <dd class="complete"> Flat Rate - Fixed <br>
+                  <span class="price">$15.00</span> </dd>
+                <dt> Payment Method </dt>
+              </dl>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- Main Container end --> 
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+  
+
+</div>
+
+{% endblock %}
+<!-- JavaScript --> 
+{% block js%}
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+{% endblock %}
+</body>
+</html>

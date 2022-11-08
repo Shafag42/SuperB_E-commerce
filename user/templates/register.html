@@ -1,0 +1,167 @@
+﻿{% extends "base.html" %}
+{% load static %}
+<!-- Favicons Icon -->
+
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+
+
+<!-- CSS Style -->
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+{% endblock %}
+
+{% block content %}
+<body class="customer-account-login inner-page">
+<div id="page"> 
+  <!-- Main Container -->
+  <section class="main-container col1-layout bounceInUp animated">
+    <div class="main container">
+      <div class="account-login">
+        <div class="page-title">
+          <h1>Login or Create an Account</h1>
+        </div>
+        <fieldset class="col2-set">
+          <legend>Login or Create an Account</legend>
+          <div class="col-1 new-users"><strong>Registered Customers</strong>
+            <div class="content">
+              <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+              <div class="buttons-set">
+                <button class="button create-account"><span>Login</span></button>
+              </div>
+            </div>
+          </div>
+          <form method="post" >
+            {% csrf_token %}
+          <div class="col-2 registered-users"><strong>New Customers</strong>
+            <div class="content">
+              <p>If you have an account with us, please log in.</p>
+              <ul class="form-list">
+                <li>
+                  {{ form.first_name.label }}
+                  {{ form.first_name }}
+                  {% for error in form.first_name.errors %}
+                  <span class="alert-danger">
+                    {{ error }}
+                  </span> 
+                   {% endfor %}
+                </li>
+                <li>
+                 {{ form.last_name.label }}
+                 {{ form.last_name }}
+                 {% for error in form.last_name.errors %}
+                  <span class="alert-danger">
+                    {{ error }}
+                  </span> 
+                   {% endfor %}
+                </li>
+                <li>
+                 {{ form.username.label }}<span class="required">*</span>
+                 {{ form.username }}
+                 {% for error in form.username.errors %}
+                  <span class="alert-danger">
+                    {{ error }}
+                  </span> 
+                   {% endfor %}
+                </li>
+                <li>
+                  {{ form.email.label }}
+                  {{ form.email }}
+                  {% for error in form.email.errors %}
+                  <span class="alert-danger">
+                    {{ error }}
+                  </span> 
+                   {% endfor %}
+                </li>
+                <li>
+                  {{ form.password1.label }}<span class="required">*</span>
+                  {{ form.password1 }}
+                  {% for error in form.password1.errors %}
+                  <span class="alert-danger">
+                    {{ error }}
+                  </span> 
+                   {% endfor %}
+                </li>
+                <li>
+                  {{ form.password2.label }}<span class="required">*</span>
+                 {{ form.password2 }}
+                 {% for error in form.password2.errors %}
+                  <span class="alert-danger">
+                    {{ error }}
+                  </span> 
+                   {% endfor %}
+                </li>
+              </ul>
+              <p class="required">* Required Fields</p>
+              <div class="buttons-set">
+                <button id="send2" name="" type="submit" class="button login"><span>Register</span></button>
+              </form>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </section>
+  <!-- Main Container End --> 
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            
+             <!-- Item -->
+             <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+             <!-- End Item --> 
+             
+             <!-- Item -->
+             <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+             <!-- End Item --> 
+             
+             <!-- Item -->
+             <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+             <!-- End Item --> 
+             
+             <!-- Item -->
+             <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+             <!-- End Item --> 
+             
+             <!-- Item -->
+             <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+             <!-- End Item --> 
+             
+             <!-- Item -->
+             <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+             <!-- End Item --> 
+             
+             <!-- Item -->
+             <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+             <!-- End Item --> 
+             
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+ 
+</div>
+
+{% endblock %}
+<!-- JavaScript --> 
+{% block js%} 
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+{% endblock %}
+</body>
+</html>

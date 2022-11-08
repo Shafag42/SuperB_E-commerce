@@ -1,0 +1,183 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+{% endblock %}
+
+{% block css %}
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+{% endblock %} 
+
+
+<body class="contacts-index-index rtl inner-page">
+<div id="page"> 
+  
+  
+  <!-- Main Container -->
+  {% block content %}
+  <section class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+        <section class="col-main col-sm-9">
+          <div class="page-title">
+            <h1>Contact Us</h1>
+          </div>
+          <form method="POST">
+            {% comment %} {% include 'messages.html' %} {% endcomment %}
+            {% csrf_token %}
+            {% if form.errors %}
+              <div class="alert alert-danger alert-dismissible" role="alert">
+                  <div id="form_errors">
+                      {% for key, value in form.errors.items %}
+                      <strong>{{ key }} - {{ value }}</strong>
+                      {% endfor %}
+                  </div>
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+            {% endif %}
+            
+
+          <div class="static-contain">
+            <fieldset class="group-select">
+              <ul>
+                <li>
+                  <div class="customer-name">
+                    <div class="input-box name-firstname">
+                      <label for="billing:firstname"> First Name<span class="required">*</span></label>
+                      <br>
+                      <div class="form-group">
+                        {{form.first_name}}
+                        {{form.first_name.errors}}
+                      </div>
+                    </div>
+                    <div class="input-box name-lastname">
+                      <label for="billing:lastname"> Email Address <span class="required">*</span> </label>
+                      <br>
+                      {{form.email}}
+                      {{form.email.errors}}
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="input-box">
+                    <label for="billing:company">Company</label>
+                    <br>
+                    {{form.company}}
+                    {{form.company.errors}}
+                  </div>
+                  <div class="input-box">
+                    <label for="billing:email">Telephone <span class="required">*</span></label>
+                    <br>
+                    {{form.telephone}}
+                    {{form.telephone.errors}}
+                  </div>
+                </li>
+                <li>
+                  <label for="billing:street1">Address <span class="required">*</span></label>
+                  <br>
+                  {{form.address_one}}
+                  {{form.address_one.errors}}
+                </li>
+                <li>
+                  {{form.address_two}}
+                  {{form.address_two.errors}}
+                </li>
+                <li class="">
+                  <label for="comment">Comment<em class="required">*</em></label>
+                  <br>
+                  <div style="float:none" class="">
+                    {{form.comment}}
+                    {{form.comment.errors}}
+                  </div>
+                </li>
+                    </ul>
+                  </fieldset>
+                </li>
+                <span class="require"><em class="required">* </em>Required Fields</span>
+                <div class="buttons-set">
+                  <button type="submit" title="Submit" class="button submit"> <span> Submit </span> </button>
+                </div>
+              </ul>
+            </fieldset>
+          </div>
+        </section>
+        <aside class="col-right sidebar col-sm-3">
+          <div class="block block-company">
+            <div class="block-title">Company </div>
+            <div class="block-content">
+              <ol id="recently-viewed-items">
+                <li class="item odd"><a href="#"> About Us</a></li>
+                <li class="item even"><a href="#"> Sitemap</a></li>
+                <li class="item  odd"><a href="#"> Terms of Service</a></li>
+                <li class="item even"><a href="#"> Search Terms</a></li>
+                <li class="item last"><strong> Contact Us</strong></li>
+              </ol>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- Main Container End --> 
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+
+</div>
+
+{% endblock %}
+<!-- JavaScript -->  
+{% block js %}
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,173 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+<!-- Favicons Icon -->
+
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+
+
+<!-- CSS Style -->
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/revslider.css' %}" >
+{% endblock %}
+
+{% block content %}
+<body class="customer-account-index customer-account inner-page">
+<div id="page"> 
+  
+  
+  <!-- Main Container -->
+  <section class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+        <div class="col-main col-sm-9">
+          <div class="my-account">
+            <div class="page-title">
+              <h1>My Wishlist</h1>
+            </div>
+            <div class="my-wishlist">
+              <form method="post" action="#" id="wishlist-view-form">
+                <fieldset>
+                  <input type="hidden" value="ROBdJO5tIbODPZHZ" name="">
+                  <div class="table-responsive">
+                    <table id="wishlist-table" class="clean-table linearize-table data-table">
+                      <thead>
+                        <tr class="first last">
+                          <th class="customer-wishlist-item-image"></th>
+                          <th class="customer-wishlist-item-info"></th>
+                          {% comment %} <th class="customer-wishlist-item-quantity">Quantity</th> {% endcomment %}
+                          <th class="customer-wishlist-item-price">Price</th>
+                          <th class="customer-wishlist-item-cart">Action</th>
+                          <th class="customer-wishlist-item-remove"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {% comment %} {% for wishlist in wishlist %} {% endcomment %}
+                        {% if wishlist %}
+                        {% for product in wishlist %}
+                        <tr id="item_31" class="first odd">
+                          <td class="wishlist-cell0 customer-wishlist-item-image"><a title="Softwear Women's Designer" href="#" class="product-image"> <img width="150" height="150" alt="Softwear Women's Designer" src= {{ product.item.cover_image.url }}> </a></td>
+                          <td class="wishlist-cell1 customer-wishlist-item-info"><h3 class="product-name"><a title="Softwear Women's Designer" href="#">{{ product.item.product_id.name }}</a></h3>
+                            <div class="description std">
+                              <div class="inner">{{ product.item.product_id.name }}</div> 
+                              
+                            </div>
+                            {% comment %} <textarea title="Comment" onblur="" onfocus="" cols="5" rows="3" name="" style="height: 90px; width: 96%;"></textarea></td>
+                          <td data-rwd-label="Quantity" class="wishlist-cell2 customer-wishlist-item-quantity"><div class="cart-cell">
+                              {% comment %} <div class="add-to-cart-alt">
+                                <input type="text" value="1" name="" class="input-text qty validate-not-negative-number" pattern="\d*">
+                              </div> 
+                            </div></td> {% endcomment %}
+                          <td data-rwd-label="Price" class="wishlist-cell3 customer-wishlist-item-price"><div class="cart-cell">
+                              <div class="price-box"> <span class="regular-price"> <span class="price">{{ product.item.product_id.sell_price }}</span> </span> </div>
+                            </div></td>
+                          <td class="wishlist-cell4 customer-wishlist-item-cart"><div class="cart-cell">
+                              <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+                            </div>
+                            <p><a href="#" class="" onclick="return confirm('Are you sure?')">Edit</a></p></td>
+                          <td class="wishlist-cell5 customer-wishlist-item-remove last"><a class="remove-item" title="Clear Cart" href="#"><span><span></span></span></a></td>
+                        </tr>
+                        {% endfor %}
+                        {% else %}
+                        <p>not yet </p>
+                        {% endif %}
+                        {% comment %} {% endfor %} {% endcomment %}
+                        {% comment %} <tr id="item_33" class="odd">
+                          <td class="wishlist-cell0 customer-wishlist-item-image"><a title="" href="#" class="product-image"> <img width="150" height="150" alt="Softwear Women's Designer" src="{% static 'products-images/product.jpg' %}"> </a></td>
+                          <td class="wishlist-cell1 customer-wishlist-item-info"><h3 class="product-name"><a title="" href="#/">Softwear Women's Designer</a></h3>
+                            <div class="description std">
+                              <div class="inner">A Black Multi-Coloured Printed Leggings for Women from Softwear.</div>
+                            </div>
+                            <textarea title="Comment" onblur="" onfocus="" cols="5" rows="3" name="" style="height: 90px; width: 96%;"></textarea></td>
+                          <td data-rwd-label="Quantity" class="wishlist-cell2 customer-wishlist-item-quantity"><div class="cart-cell">
+                              <div class="add-to-cart-alt">
+                                <input type="text" value="1" name="" class="input-text qty validate-not-negative-number" pattern="\d*">
+                              </div>
+                            </div></td>
+                          <td data-rwd-label="Price" class="wishlist-cell3 customer-wishlist-item-price"><div class="cart-cell">
+                              <div class="price-box"> <span class="regular-price"> <span class="price">$99.00</span> </span> </div>
+                            </div></td>
+                          <td class="wishlist-cell4 customer-wishlist-item-cart"><div class="cart-cell">
+                              <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+                            </div>
+                            <p><a href="#" class="">Edit</a></p></td>
+                          <td class="wishlist-cell5 customer-wishlist-item-remove last"><a class="remove-item" title="Clear Cart" href="#"><span><span></span></span></a></td>
+                        </tr>
+                        <tr id="item_32" class="last even">
+                          <td class="wishlist-cell0 customer-wishlist-item-image"><a title="Slim Fit Casual Shirt" href="#" class="product-image"> <img width="150" height="150" alt="Slim Fit Casual Shirt" src="{% static 'products-images/product.jpg' %}"> </a></td>
+                          <td class="wishlist-cell1 customer-wishlist-item-info"><h3 class="product-name"><a title="Slim Fit Casual Shirt" href="#">Slim Fit Casual Shirt</a></h3>
+                            <div class="description std">
+                              <div class="inner">Blue colour self design casual shirt.</div>
+                            </div>
+                            <textarea title="Comment" onblur="" onfocus="" cols="5" rows="3" name="" style="height: 90px; width: 96%;"></textarea></td>
+                          <td data-rwd-label="Quantity" class="wishlist-cell2 customer-wishlist-item-quantity"><div class="cart-cell">
+                              <div class="add-to-cart-alt">
+                                <input type="text" value="1" name="" class="input-text qty validate-not-negative-number" pattern="\d*">
+                              </div>
+                            </div></td>
+                          <td data-rwd-label="Price" class="wishlist-cell3 customer-wishlist-item-price"><div class="cart-cell">
+                              <div class="price-box"> <span class="regular-price"> <span class="price">$55.00</span> </span> </div>
+                            </div></td>
+                          <td class="wishlist-cell4 customer-wishlist-item-cart"><div class="cart-cell">
+                              <button class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+                            </div>
+                            <p><a href="#" class="">Edit</a></p></td>
+                          <td class="wishlist-cell5 customer-wishlist-item-remove last"><a class="remove-item" title="Clear Cart" href="#"><span><span></span></span></a></td>
+                        </tr> {% endcomment %}
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="buttons-set buttons-set2">
+                    <button class="button btn-share" title="Share Wishlist" name="" type="submit"><span>Share Wishlist</span></button>
+                    <button class="button btn-add" title="Add All to Cart" type="button"><span>Add All to Cart</span></button>
+                    <button class="button btn-update" title="Update Wishlist" name="" type="submit"><span>Update Wishlist</span></button>
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+            <div class="buttons-set">
+              <p class="back_link"><a href="product_list.html"><small>« </small>Back</a></p>
+            </div>
+          </div>
+        </div>
+        {% comment %} <aside class="col-right sidebar col-sm-3">
+          <div class="block block-account">
+            <div class="block-title">My Account</div>
+            <div class="block-content">
+              <ul>
+                <li><a href="#">Account Dashboard</a></li>
+                <li><a href="#">Account Information</a></li>
+                <li><a href="#">Address Book</a></li>
+                <li><a href="#">My Orders</a></li>
+                <li><a href="#">Billing Agreements</a></li>
+                <li><a href="#">Recurring Profiles</a></li>
+                <li><a href="#">My Product Reviews</a></li>
+                <li><a href="#">My Tags</a></li>
+                <li class="current"><a href="#">My Wishlist</a></li>
+                <li><a href="#">My Downloadable</a></li>
+                <li class="last"><a href="#">Newsletter Subscriptions</a></li>
+              </ul>
+            </div>
+          </div>
+        </aside> {% endcomment %}
+      </div>
+    </div>
+  </section>
+  
+  <!-- Main Container End --> 
+  
+<br>
+</div>
+
+{% endblock %}
+
+<!-- JavaScript -->  
+{% block js %}
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+<script src="{% static 'js/wishlist.js' %}" type="text/javascript"></script>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,114 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+
+<!-- Favicons Icon -->
+{% block title %}
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+{% endblock %}
+
+{% block css %}
+<!-- CSS Style -->
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+
+{% endblock %}
+
+{% block content %}
+<body class="cms-page-view cms-about-us rtl inner-page">
+<div id="page"> 
+  <!-- Main Container -->
+  <section class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+        <section class="col-main col-sm-9">
+          <div class="page-title">
+            <h1>About Us</h1>
+          </div>
+          <div class="static-contain">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+            <br>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem IpsumLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+            <br>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+          </div>
+        </section>
+        <aside class="col-right sidebar col-sm-3">
+          <div class="block block-company">
+            <div class="block-title">Company </div>
+            <div class="block-content">
+              <ol id="recently-viewed-items">
+                <li class="item odd"><strong>About Us</strong></li>
+                <li class="item even"><a href="#">Sitemap</a></li>
+                <li class="item  odd"><a href="#">Terms of Service</a></li>
+                <li class="item even"><a href="#">Search Terms</a></li>
+                <li class="item last"><a href="{% url 'contact_us' %}">Contact Us</a></li>
+              </ol>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- Main Container End --> 
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            
+           
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+  
+ 
+  
+ </div>
+
+{% endblock %}
+
+{% block js %}
+<!-- JavaScript --> 
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+{% endblock %}
+</body>
+</html>

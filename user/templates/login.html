@@ -1,0 +1,157 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+<!-- Favicons Icon -->
+<title>Login</title>
+
+<!-- CSS Style -->
+{% block css %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+{% endblock %}
+
+{% block content %}
+<body class="customer-account-login inner-page">
+<div id="page"> 
+  
+  <!-- Main Container -->
+  <section class="main-container col1-layout bounceInUp animated">
+    <div class="main container">
+      <div class="account-login">
+        <div class="page-title">
+          <h1>Login or Create an Account</h1>
+        </div>
+        <fieldset class="col2-set">
+          <legend>Login or Create an Account</legend>
+          <div class="col-1 new-users"><strong>New Customers</strong>
+            <div class="content">
+              <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+              <div class="buttons-set">
+                <a class="button create-account" href="{% url 'register' %}"><span>Create an Account</span></a>
+                <br>
+                <br>
+                
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="authsocial" style="
+            position: absolute;
+            top: 239px;
+            margin-right: 22px;
+            font-size: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px; " >
+            <a href="{%  url 'social:begin' 'facebook' %}" class="fa fa-facebook" style="
+            margin-right: 22px;"></a>
+            <a href="{% url 'social:begin' 'github' %}" class="fa fa-github" style="
+            margin-right: 22px;"></a>
+            <a href="{% url 'social:begin' 'google-oauth2' %}" class="fa fa-google"style="
+            margin-right: 22px;"></a>
+          </div>
+          </div>
+         
+
+          <div class="col-2 registered-users"><strong>Registered Customers</strong>
+            <div class="content">
+              <p>If you have an account with us, please log in.</p>
+              <form method="POST" action="{% url 'login' %}">
+                {% csrf_token %}
+                <ul class="form-list">
+                  <li>
+                    {{ form.username.label }}
+                    <br>
+                    {{ form.username }}
+
+
+                    {% comment %} <label for="email">Email Address <span class="required">*</span></label>
+                    <br>
+                    <input type="text" title="" class="input-text" id="email" value="" name=""> {% endcomment %}
+                  </li>
+                  <li>
+                    {{ form.password.label}}
+                    {% comment %} <label for="pass">Password <span class="required">*</span></label> {% endcomment %}
+                    <br>
+                    {{ form.password }}
+                    {% comment %} <input type="password" title="" id="pass" class="input-text" name=""> {% endcomment %}
+                  </li>
+                </ul>
+              <p class="required">* Required Fields</p>
+              <div class="buttons-set">
+                <button id='send2' type="submit" class="button login">Login</button>
+                <a class="forgot-word" href={% url 'password_reset' %}>Forgot Your Password?</a> 
+              </div>
+            </form>
+
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+  </section>
+  <!-- Main Container End --> 
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+
+</div>
+
+{% endblock %}
+<!-- JavaScript --> 
+{% block js%} 
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+{% endblock %}
+</body>
+</html>

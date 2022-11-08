@@ -1,0 +1,371 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+<!-- Favicons Icon -->
+{% block title %}
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+{% endblock %}
+
+<!-- CSS Style -->
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/internal.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}" media="all">
+{% endblock %}
+
+{% block content %}
+<body class="onestepcheckout-index-index inner-page">
+<div id="page">   
+  <!-- Main Container -->
+  <section class="main-container col2-right-layout bounceInUp animated">
+    <div class="main container">
+      <div class="row">
+        <div class="col-main col-sm-9">
+          <div class="page-title">
+            <h1>Checkout</h1>
+          </div>
+          <ol class="one-page-checkout" id="checkoutSteps">
+            <li id="opc-billing" class="section allow active">
+              <div class="step-title"> <span class="number">1</span>
+                <h3>Checkout Method</h3>
+                <!--<a href="#">Edit</a> --> 
+              </div>
+              <div id="checkout-step-billing" class="step a-item" >
+                <form id="co-billing-form" >
+                  <fieldset class="group-select">
+                    <ul>
+                      <li>
+                        <label for="billing-address-select">Select a billing address from your address book or enter a new address.</label>
+                        <br>
+                        <select name="" id="billing-address-select" class="address-select" title="" onChange="#">
+                          <option value="1" selected="selected">pranali d, aundh, tyyrt, Alabama 46532, United States</option>
+                          <option >New Address</option>
+                        </select>
+                      </li>
+                      <li id="billing-new-address-form" style="display: none;">
+                        <fieldset>
+                          <legend>New Address</legend>
+                          <input type="hidden" name="" value="4269" id="billing:address_id">
+                          <ul>
+                            <li>
+                              <div class="customer-name">
+                                <div class="input-box name-firstname">
+                                  <label for="billing:firstname"> First Name <span class="required">*</span> </label>
+                                  <br>
+                                  <input type="text" id="billing:firstname" name="" value="pranali" title="First Name" class="input-text">
+                                </div>
+                                <div class="input-box name-lastname">
+                                  <label for="billing:lastname"> Last Name <span class="required">*</span> </label>
+                                  <br>
+                                  <input type="text" id="billing:lastname" name="" value="d" title="Last Name" class="input-text">
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="billing:company">Company</label>
+                                <br>
+                                <input type="text" id="billing:company" name=""  title="Company" class="input-text">
+                              </div>
+                            </li>
+                            <li>
+                              <label>Address <span class="required">*</span></label>
+                              <br>
+                              <input type="text" title="Street Address" name="" value="aundh" class="input-text">
+                            </li>
+                            <li>
+                              <input type="text" title="Street Address 2" name="" class="input-text">
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="billing:city">City <span class="required">*</span></label>
+                                <br>
+                                <input type="text" title="City" name="" value="tyyrt" class="input-text" id="billing:city">
+                              </div>
+                              <div class="input-box">
+                                <label for="billing:region">State/Province <span class="required">*</span></label>
+                                <br>
+                                <select id="billing:region_id" name="billing[region_id]" title="State/Province" class="validate-select" >
+                                  <option >Please select region, state or province</option>
+                                  <option value="1">Alabama</option>
+                                  <option value="2">Alaska</option>
+                                  <option value="3">American Samoa</option>
+                                  <option value="4">Arizona</option>
+                                </select>
+                                <input type="text" id="billing:region" name="" value="Alabama" title="State/Province" class="input-text" style="display: none;">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="billing:postcode">Zip/Postal Code <span class="required">*</span></label>
+                                <br>
+                                <input type="text" title="Zip/Postal Code" name="" id="billing:postcode" value="46532" class="input-text validate-zip-international">
+                              </div>
+                              <div class="input-box">
+                                <label for="billing:country_id">Country <span class="required">*</span></label>
+                                <br>
+                                <select name="billing[country_id]" id="billing:country_id" class="validate-select" title="Country">
+                                  <option > </option>
+                                  <option value="AF">Afghanistan</option>
+                                  <option value="AL">Albania</option>
+                                  <option value="DZ">Algeria</option>
+                                  <option value="AS">American Samoa</option>
+                                  <option value="AD">Andorra</option>
+                                </select>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="billing:telephone">Telephone <span class="required">*</span></label>
+                                <br>
+                                <input type="text" name="" value="454541" title="Telephone" class="input-text" id="billing:telephone">
+                              </div>
+                              <div class="input-box">
+                                <label for="billing:fax">Fax</label>
+                                <br>
+                                <input type="text" name=""  title="Fax" class="input-text" id="billing:fax">
+                              </div>
+                            </li>
+                            <li>
+                              <input type="checkbox" name="" value="1" title="Save in address book" id="billing:save_in_address_book" onChange="#;" class="checkbox">
+                              <label for="billing:save_in_address_book">Save in address book</label>
+                            </li>
+                          </ul>
+                        </fieldset>
+                      </li>
+                      <li>
+                        <input type="radio" name="" id="billing:use_for_shipping_yes" value="1" class="radio">
+                        <label for="billing:use_for_shipping_yes">Ship to this address</label>
+                        <input type="radio" name="" id="billing:use_for_shipping_no" value="0" checked="checked" class="radio">
+                        <label for="billing:use_for_shipping_no">Ship to different address</label>
+                      </li>
+                    </ul>
+                    <p class="require"><em class="required">* </em>Required Fields</p>
+                    <button type="button" class="button continue" ><span>Continue</span></button>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+            <li id="opc-shipping" class="section">
+              {% comment %} <div class="step-title"> <span class="number">2</span>
+                <h3 class="one_page_heading"> Shipping Information</h3>
+                <!--<a href="#">Edit</a>--> 
+              </div> {% endcomment %}
+              <div id="checkout-step-shipping" class="step a-item" style="display: none;">
+                <form  id="co-shipping-form">
+                  <fieldset class="group-select">
+                    <ul>
+                      <li>
+                        <label for="shipping-address-select">Select a shipping address from your address book or enter a new address.</label>
+                        <br>
+                        <select name="" id="shipping-address-select" class="address-select" title="" onChange="#">
+                          <option value="1" selected="selected">Sarsha Smith, Main Rd, tyyrt, Alabama 46532, United States</option>
+                          <option >New Address</option>
+                        </select>
+                      </li>
+                      <li id="shipping-new-address-form" style="display: none;">
+                        <fieldset>
+                          <input type="hidden" name=""  id="shipping:address_id">
+                          <ul>
+                            <li>
+                              <div class="customer-name">
+                                <div class="input-box name-firstname">
+                                  <label for="shipping:firstname"> First Name <span class="required">*</span> </label>
+                                  <br>
+                                  <input type="text" id="shipping:firstname" name=""  title="First Name" class="input-text" onChange="#">
+                                </div>
+                                <div class="input-box name-lastname">
+                                  <label for="shipping:lastname"> Last Name <span class="required">*</span> </label>
+                                  <br>
+                                  <input type="text" id="shipping:lastname" name=""  title="Last Name" class="input-text" onChange="#">
+                                </div>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="shipping:company">Company</label>
+                                <br>
+                                <input type="text" id="shipping:company" name=""  title="Company" class="input-text" onChange="#;">
+                              </div>
+                            </li>
+                            <li>
+                              <label for="shipping:street1">Address <span class="required">*</span></label>
+                              <br>
+                              <input type="text" title="Street Address" name="" id="shipping:street1"  class="input-text" onChange="#;">
+                            </li>
+                            <li>
+                              <input type="text" title="Street Address 2" name="" id="shipping:street2"  class="input-text" onChange="#;">
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="shipping:city">City <span class="required">*</span></label>
+                                <br>
+                                <input type="text" title="City" name=""  class="input-text" id="shipping:city" onChange="#;">
+                              </div>
+                              <div class="input-box">
+                                <label for="shipping:region">State/Province <span class="required">*</span></label>
+                                <br>
+                                <select id="shipping:region_id" name="" title="State/Province" class="validate-select" >
+                                  <option >Please select region, state or province</option>
+                                  <option value="1">Alabama</option>
+                                  <option value="2">Alaska</option>
+                                  <option value="3">American Samoa</option>
+                                </select>
+                                <input type="text" id="shipping:region" name=""  title="State/Province" class="input-text" style="display: none;">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="shipping:postcode">Zip/Postal Code <span class="required">*</span></label>
+                                <br>
+                                <input type="text" title="Zip/Postal Code" name="" id="shipping:postcode"  class="input-text validate-zip-international" onChange="#;">
+                              </div>
+                              <div class="input-box">
+                                <label for="shipping:country_id">Country <span class="required">*</span></label>
+                                <br>
+                                <select name="" id="shipping:country_id" class="validate-select" title="Country" onChange="#;">
+                                  <option > </option>
+                                  <option value="AF">Afghanistan</option>
+                                  <option value="AL">Albania</option>
+                                  <option value="DZ">Algeria</option>
+                                  <option value="AS">American Samoa</option>
+                                  <option value="AD">Andorra</option>
+                                </select>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="input-box">
+                                <label for="shipping:telephone">Telephone <span class="required">*</span></label>
+                                <br>
+                                <input type="text" name=""  title="Telephone" class="input-text" id="shipping:telephone" onChange="#;">
+                              </div>
+                              <div class="input-box">
+                                <label for="shipping:fax">Fax</label>
+                                <br>
+                                <input type="text" name=""  title="Fax" class="input-text" id="shipping:fax" onChange="#;">
+                              </div>
+                            </li>
+                            <li>
+                              <input type="checkbox" name="shipping[save_in_address_book]" value="1" title="Save in address book" id="shipping:save_in_address_book" onChange="#;" class="checkbox">
+                              <label for="shipping:save_in_address_book">Save in address book</label>
+                            </li>
+                            <li>
+                              <input type="checkbox" name="" id="shipping:same_as_billing" value="1" class="checkbox">
+                              <label for="shipping:same_as_billing">Use Billing Address</label>
+                            </li>
+                          </ul>
+                        </fieldset>
+                      </li>
+                    </ul>
+                    <p class="require"><em class="required">* </em>Required Fields</p>
+                    <div class="buttons-set1" id="shipping-buttons-container">
+                      <button type="button" class="button" ><span>Continue</span></button>
+                      <a href="#" class="back-link">« Back</a> </div>
+                  </fieldset>
+                </form>
+              </div>
+            </li>
+          </ol>
+        </div>
+        <aside class="col-right sidebar col-sm-3">
+          <div class="block block-progress">
+            <div class="block-title ">Your Checkout</div>
+            <div class="block-content">
+              <dl>
+                <dt class="complete"> Billing Address <span class="separator">|</span> <a href="#">Change</a> </dt>
+                <dd class="complete">
+                  <address>
+                  John Smith<br>
+                  Xyz software co.<br>
+                  123 Main Street<br>
+                  Windsor<br>
+                  Holtsville,  New York, 00501<br>
+                  United States<br>
+                  T: 1234567890 <br>
+                  F: 123456
+                  </address>
+                </dd>
+                <dt class="complete"> Shipping Address <span class="separator">|</span> <a href="#">Change</a> </dt>
+                <dd class="complete">
+                  <address>
+                  Saraha Smith<br>
+                  ThemesGround Tech Co<br>
+                  123 Main Rd,<br>
+                  St Town,  New York, 00501<br>
+                  United States<br>
+                  T: 1234567890 <br>
+                  F: 123456
+                  </address>
+                </dd>
+                {% comment %} <dt class="complete"> Shipping Method <span class="separator">|</span> <a href="#">Change</a> </dt>
+                <dd class="complete"> Flat Rate - Fixed <br>
+                  <span class="price">$49.00</span> </dd>
+                <dt> Payment Method </dt> {% endcomment %}
+              </dl>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- Main Container End --> 
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+  
+  
+</div>
+
+{% endblock %}
+<!-- JavaScript -->
+{% block js %} 
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/common.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script>  
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+{% endblock %}
+</body>
+</html>

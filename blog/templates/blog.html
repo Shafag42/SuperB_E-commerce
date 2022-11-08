@@ -1,0 +1,92 @@
+﻿{% extends "base.html" %}
+{% load static %}
+{% load hitcount_tags %}
+
+
+<!-- Favicons Icon -->
+
+{% block title %}
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+{% endblock %}
+
+<!-- CSS Style -->
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{% static 'css/blogmate.css' %}">
+{% endblock %}
+
+{% block content %}
+<body class="blogmate-index-index rtl inner-page">
+<div id="page"> 
+       
+  <!-- Main Container -->
+  
+  <section class="main-container col2-right-layout bounceInUp animated">
+    <div class="main container">
+      <div class="row">
+        <div class="col-main col-sm-9">
+          
+          <div class="blog-wrapper latest-blog" id="main">
+            <div class="site-content" id="primary">
+              <div role="main" id="content">
+                {% for post in posts %}
+     <div class="blog_post">
+                  <div class="thumbnail">
+               <h2> <a href="{% url 'blog_detail' post.slug %}" >{{ post.title }}</a> </h2>
+					<div class="featured-img">
+					<span class="gradient-overlay"></span>
+					 <img src={{ post.img.url }} alt="blog post">
+					
+					</div>
+                    </div>
+                    <div class="entry-meta">
+			<a href="#">
+  <span class="author-avatar byline"><img alt="" src={{ post.user_img.url }} class="avatar avatar-96 photo">{{ post.author }} </span> <span class="timestamp">{{ blog.created_at }}</span> <span <p>Views: {% get_hit_count for post %}</p></span>
+</a>
+</div>               
+                    <p> {{post.blog_short}}</p>
+                   <a href="{% url 'blog_detail' post.slug %}" class="continue-btn">Continue Reading <span></span></a>
+                  </div>
+               {% endfor %}
+              </div>
+            </div>
+            <br><br>
+          </div>
+        </div>
+        <aside class="col-right sidebar col-sm-3">
+          <div role="complementary" class="widget_wrapper13" id="secondary">
+            <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
+              <h3 class="widget-title">Most Popular Post</h3>
+              <div class="widget-content">
+
+                <ul class="posts-list unstyled clearfix">
+                  {% for popular_post in popular_posts %}
+                  <li>
+                    <figure class="featured-thumb"> <a href="{% url 'blog_detail' popular_post.slug %}" > <img width="80" height="53" alt="blog image" src={{ popular_post.img.url }}> </a> </figure>
+                    <!--featured-thumb-->
+                    <h4><a title="Pellentesque posuere" href="{% url 'blog_detail' popular_post.slug %}" >{{ popular_post.title }}</a></h4>
+                    <p class="post-meta"><i class="icon-calendar"></i>
+                      <time datetime="2014-07-10T07:09:31+00:00" class="entry-date">{{ popular_post.created_at }}</time>
+                      .</p>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <!--widget-content--> 
+              
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- Main Container End --> 
+  
+ 
+<!-- JavaScript --> 
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.flexslider.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,287 @@
+﻿{% extends "base.html" %}
+{% load static %}
+{% load hitcount_tags %}
+
+{% block icon %}
+<!-- Favicons Icon -->
+<link rel="icon" href="http://demo.magikthemes.com/skin/frontend/base/default/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="http://demo.thmthemes.com/skin/frontend/base/default/favicon.ico" type="image/x-icon" />
+<title>Superb premium HTML5 &amp; CSS3 template</title>
+
+{% endblock %}
+
+{% block css %}
+<!-- CSS Style -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/blogmate.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<body class="blogmate-index-index rtl inner-page">
+<div id="page">       
+  <!-- Main Container -->
+  <section class="main-container col2-right-layout bounceInUp animated">
+    <div class="main container">
+      <div class="row">
+        <div class="col-main col-sm-9">
+        
+          <div class="blog-wrapper latest-blog" id="main">
+            <div class="site-content" id="primary">
+              <div role="main" id="content">
+               <div class="blog_post">
+                  <div class="thumbnail">
+               <h2> <a href="{% url 'blog_detail' post.slug %}" >{{ post.title }}</a> </h2>
+					<div class="featured-img">
+					<span class="gradient-overlay"></span>
+					 <img src={{ post.img.url }} alt="blog post">
+					
+					</div>
+                   
+                    </div>
+                    <div class="entry-meta">
+			<a href="#">
+  <span class="author-avatar byline"><img alt="" src={{ post.user_img.url }} class="avatar avatar-96 photo">{{ post.author }}</span> <span class="timestamp">{{ post.published }}</span> <span <p>Views: {% get_hit_count for post %}</p></span>
+</a>
+</div>
+                    <div class="entry-content">
+                    <p>  {{ post.description }} </p>
+</div>
+                   
+                  </div>
+{% comment %} 
+                  <div class="comment-content wow bounceInUp animated">
+                    <div class="comments-wrapper">
+                      <h3> Comments </h3>
+                      <ul class="commentlist"> 
+  {% if comments %}
+  <strong class="text-secondary">{{ object.number_of_comments }} Comment{{ object.number_of_comments|pluralize }}</strong>
+  <hr>
+  <ul>
+    {% for comment in comments %}
+    <li>           
+     <div>
+        <span>
+          <strong class="text-info">{{ comment.name }} </strong>
+          <small class="text-muted">{{ comment.date_created }}</small>
+        </span>
+        <p>
+          {{ comment.comment_field|safe }}
+        </p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <strong class="text-secondary">No comments yet...</strong>
+  {% endif %} {% endcomment %}
+
+                 <div class="comment-content wow bounceInUp animated">
+                  <div class="comments-wrapper">
+                     {% if comments %}
+                    <strong class="text-secondary">{{ object.number_of_comments }} Comment{{ object.number_of_comments|pluralize }}</strong>
+                    {% comment %} <h3> Comments </h3> {% endcomment %}
+                    <ul class="commentlist">
+                 {% for comment in comments %}
+                      <li class="comment">
+                        <div class="comment-wrapper" >
+                          <div class="comment-author vcard">
+                            <p class="gravatar"><a href="#"><img width="60" height="60" alt="avatar" src={{ post.user_img.url }}></a></p>
+                            <span class="author"><strong class="text-info">{{ comment.name }} </strong></span> </div>
+                          <!--comment-author vcard-->
+                          <div class="comment-meta">
+                            <time datetime="2014-07-10T07:28:32+00:00" class="entry-date"><small class="text-muted">{{ comment.date_created }}</small></time>
+                            . </div>
+                          <!--comment-meta-->
+                          <div class="comment-body">  <p>
+                            {{ comment.comment_field|safe }}
+                          </p> </div>
+                        </div>
+                      </li>
+                      {% endfor %}
+                   
+                      <!--comment-->
+                    </ul>
+                    {% else %}
+                    <strong class="text-secondary">No comments yet...</strong>
+                  {% endif %}
+                    
+                    <!--commentlist--> 
+                  </div>
+                  <!--comments-wrapper-->
+                  
+                  <div class="comments-form-wrapper clearfix">
+                    <div id="comments_section">
+
+                      {% if user.is_authenticated %}
+                      <form method="POST">
+                        {% csrf_token %}
+                        <div class="form-group">
+                          {{ comment_form }}
+                          {% comment %} <button class="btn btn-info" type="submit">Add comment <i class="fas fa-comments"></i></button> {% endcomment %}
+                          <button type="submit" class="bnt-comment"><span><span>Add Comment</span></span></button>
+                        </div>
+                      </form>
+                      {% else %}
+                      <a class="btn btn-outline-info" href="{% url 'login' %}?next={{request.path}}">Log in to add a comment!</a><br>
+                      {% endif %}
+                    {% comment %} <h3>Leave A reply</h3>
+                    <form class="comment-form" method="POST" id="postComment"> 
+                      {% csrf_token %}
+                      {% comment %} {{ form }} {% endcomment %}
+                       <div class="field">
+                        {{ form.name.label }}
+                        {{ form.name }}
+                      {% comment %} </div>
+                      <div class="field">
+                      {{ form.email.label }}
+                      {{ form.email }}
+                      </div>
+                      <div class="clear"></div>
+                      <div class="field aw-blog-comment-area">
+
+                      {{ form.comment.label }}
+                      {{ form.comment }} {% endcomment %}
+                      </div>  
+                      {% comment %} <div style="width:96%" class="button-set">
+                        <input type="hidden" value="1" name="blog_id">
+                        <button type="submit" class="bnt-comment"><span><span>Add Comment</span></span></button>{% endcomment %}
+                      </div> 
+                   </form>
+                  </div>
+                  <!--comments-form-wrapper clearfix--> 
+                  
+                </div> 
+                
+              </div>
+            </div>
+          </div>
+          <br> 
+        </div>
+        
+        
+        <aside class="col-right sidebar col-sm-3">
+          <div role="complementary" class="widget_wrapper13" id="secondary">
+            <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
+              <h3 class="widget-title">Most Popular Post</h3>
+              <div class="widget-content">
+                <ul class="posts-list unstyled clearfix">
+                  {% for popular_post in popular_posts %}
+                  <li>
+                    <figure class="featured-thumb"> <a href="{% url 'blog_detail' popular_post.slug %}" > <img width="80" height="53" alt="blog image" src={{ popular_post.img.url }}> </a> </figure>
+                    <!--featured-thumb-->
+                    <h4><a title="Pellentesque posuere" href="{% url 'blog_detail' popular_post.slug %}" >{{ popular_post.title }}</a></h4>
+                    <p class="post-meta"><i class="icon-calendar"></i>
+                      <time datetime="2014-07-10T07:09:31+00:00" class="entry-date">{{ popular_post.created_at }}</time>
+                      .</p>
+                  </li>
+
+                  {% endfor %}
+                </ul>
+              </div>
+              <!--widget-content--> 
+              
+            </div>
+          
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <!-- Main Container End --> 
+  
+  <!-- Brand logo starts  -->
+  <div class="brand-logo wow bounceInUp animated">
+    <div class="container">
+      <div class="slider-items-products">
+        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col6"> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo3.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo2.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo5.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo6.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo1.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+            <!-- Item -->
+            <div class="item"><a href="#"><img src="{% static 'images/b-logo4.png' %}" alt="Image"></a> </div>
+            <!-- End Item --> 
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Brand logo ends  --> 
+
+  </div>
+
+
+{% endblock %}
+
+{% block js %}
+<!-- JavaScript --> 
+<script type="text/javascript" src="{% static 'js/parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/cloud-zoom.js' %}"></script>
+ {% endblock %}
+</body>
+</html>
+{% comment %} <h2>Leave your comment!</h2>
+<div id="comments_section">
+
+  {% if user.is_authenticated %}
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+      {{ comment_form }}
+      <button class="btn btn-info" type="submit">Add comment <i class="fas fa-comments"></i></button>
+    </div>
+  </form>
+  {% else %}
+  <a class="btn btn-outline-info" href="{% url 'login' %}?next={{request.path}}">Log in to add a comment!</a><br>
+  {% endif %}
+
+  {% if comments %}
+  <strong class="text-secondary">{{ object.number_of_comments }} Comment{{ object.number_of_comments|pluralize }}</strong>
+  <hr>
+  <ul>
+    {% for comment in comments %}
+    <li>           
+     <div>
+        <span>
+          <strong class="text-info">{{ comment.name }} </strong>
+          <small class="text-muted">{{ comment.date_created }}</small>
+        </span>
+        <p>
+          {{ comment.comment_field|safe }}
+        </p>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <strong class="text-secondary">No comments yet...</strong>
+  {% endif %} {% endcomment %}
